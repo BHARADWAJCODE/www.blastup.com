@@ -16,11 +16,11 @@
             this.enemyBulletIndex = 0;
             this.enemyIndex = 0;
             this.particleIndex = 0;
-            this.maxParticles = 10;
-            this.maxEnemies = 6;
+            this.maxParticles = 5;
+            this.maxEnemies = 3;
             this.enemiesAlive = 0;
             this.currentFrame = 0;
-            this.maxLives = 3;
+            this.maxLives = 5;
             this.life = 0;
             this.binding();
             this.player = new Player();
@@ -136,7 +136,7 @@
       gameOver: function(){
           this.isGameOver = true;
           this.clear();
-          var message = "oops! Lives were destroyed :/";
+          var message = "Lives destroyed! -DVRSCODES";
           var message2 = "Score: " + Game.score;
           var message3 = "Click Spacebar to Play Again";
           this.pause();
@@ -299,7 +299,7 @@
         Game.enemies[Game.enemyIndex] = this;
         Game.enemyIndex++;
         this.speed = Game.random(2, 3);
-        this.shootingSpeed = Game.random(30, 80);
+        this.shootingSpeed = Game.random(30, 50);
         this.movingLeft = Math.random() < 0.5 ? true : false;
         this.color = "hsl("+ Game.random(0, 360) +", 60%, 50%)";
         
